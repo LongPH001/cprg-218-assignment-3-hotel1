@@ -4,93 +4,132 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shangri La Beach Resort</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png">
-
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
-    <header class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-          <source src="resort-video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="resort-video.mp4" type="video/mp4" />
+    </video>
+
+    <div class="main-nav">
+      <div class="logo">
+        <img src="images/shangrila.png" alt="Shangri-La Logo" />
+      </div>
+    
+      <nav class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#rooms">Accommodations</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       
-        <nav class="top-nav">
-          <div class="logo">Shangri La Beach Resort</div>
-          <button class="btn">Sign in or Join</button>
-        </nav>
-      
-        <div class="hero-content">
-          <h1>Your Dream Getaway</h1>
-          <p>Indulge in luxury and breathtaking views at Shangri La Beach Resort.</p>
-          <button class="btn">View Rates</button>
-        </div>
-      </header>
-      
-  
-    <section class="features">
-      <h2>Experience Unforgettable Moments</h2>
-      <div class="feature-grid">
-        <div class="feature-item">
-          <h3>Private Beach Access</h3>
-          <p>Step onto our pristine, white-sand beach.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Infinity Pool</h3>
-          <p>Relax by our stunning oceanfront infinity pool.</p>
-        </div>
-        <div class="feature-item">
-          <h3>World-Class Spa</h3>
-          <p>Rejuvenate your mind and body at our spa.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Exquisite Dining</h3>
-          <p>Savor culinary delights at our restaurants.</p>
-        </div>
+      <div class="nav-right">
+        <button class="btn sign-in">Sign in or Join</button>
+        <button class="btn reserve">Reserve Now</button>
       </div>
-    </section>
-  
-    <section class="rooms">
-      <h2>Our Luxurious Accommodations</h2>
-      <div class="room-grid">
-        <div class="room-card">
-          <img src="images/hotelview1.png" alt="Ocean View Deluxe Room">
-          <h3>Ocean View Deluxe Room</h3>
-          <p>Enjoy stunning ocean views from your private balcony.</p>
-          <button class="btn">View Details</button>
+    </div>
+    
+    
+
+    <div class="hero-content">
+      <h1>Your Dream Getaway</h1>
+      <p>Indulge in luxury and breathtaking views at Shangri La Beach Resort.</p>
+
+      <!-- 🔍 Inline search bar -->
+      <div class="inside-hero">
+        <div class="search-field">
+          <label>Destination</label>
+          <input type="text" placeholder="Where to?" />
         </div>
-        <div class="room-card">
-          <img src="images/hotelview2.png" alt="Beachfront Suite">
-          <h3>Beachfront Suite</h3>
-          <p>Step directly onto the sand from your spacious suite.</p>
-          <button class="btn">View Details</button>
+        <div class="search-field">
+          <label>Check-in</label>
+          <input type="date" id="inline-checkin" />
         </div>
-        <div class="room-card">
-          <img src="https://source.unsplash.com/400x300/?garden-room" alt="Garden View Family Room">
-          <h3>Garden View Family Room</h3>
-          <p>Perfect for families, with ample space and garden views.</p>
-          <button class="btn">View Details</button>
+        <div class="search-field">
+          <label>Check-out</label>
+          <input type="date" id="inline-checkout" />
         </div>
+        <button class="search-btn" onclick="toggleModal()">Hotel Search</button>
       </div>
-    </section>
-  
-    <section class="testimonials">
-      <h2>What Our Guests Are Saying</h2>
-      <div class="testimonial">
-        <p>"Our stay at Shangri La was absolutely perfect! The service was impeccable, and the views were breathtaking."</p>
-        <span>- Sarah M.</span>
+    </div>
+  </header>
+
+  <!-- 🔍 MODAL POPUP -->
+  <div id="searchModal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="close-btn" onclick="toggleModal()">&times;</button>
+      <h2>Explore The World</h2>
+      <form class="modal-form">
+        <div class="form-row">
+          <label>Destination</label>
+          <input type="text" placeholder="Where to?" />
+        </div>
+        <div class="form-row">
+          <label>Check-in</label>
+          <input type="date" id="modal-checkin" />
+        </div>
+        <div class="form-row">
+          <label>Check-out</label>
+          <input type="date" id="modal-checkout" />
+        </div>
+        <div class="form-row">
+          <label>Guests</label>
+          <div class="quantity-selector">
+            <button type="button" onclick="adjustQuantity('guest-count', -1)">-</button>
+            <input type="number" id="guest-count" value="2" min="1" />
+            <button type="button" onclick="adjustQuantity('guest-count', 1)">+</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Rooms</label>
+          <div class="quantity-selector">
+            <button type="button" onclick="adjustQuantity('room-count', -1)">-</button>
+            <input type="number" id="room-count" value="1" min="1" />
+            <button type="button" onclick="adjustQuantity('room-count', 1)">+</button>
+          </div>
+        </div>
+        <button type="submit" class="modal-search-btn scroll-to-rooms">Hotel Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 🛏️ Rooms -->
+  <section id="rooms" class="rooms">
+    <h2>Our Luxurious Accommodations</h2>
+    <div class="room-grid">
+      <div class="room-card">
+        <img src="images/hotelview1.png" alt="Ocean View Deluxe Room" />
+        <h3>Ocean View Deluxe Room</h3>
+        <p>Enjoy stunning ocean views from your room.</p>
+        <button class="btn">View Details</button>
       </div>
-      <div class="testimonial">
-        <p>"The beachfront suite was amazing! Waking up to the sound of the waves and stepping right onto the sand was incredible."</p>
-        <span>- John B.</span>
+      <div class="room-card">
+        <img src="images/hotelview2.png" alt="Beachfront Suite" />
+        <h3>Beachfront Suite</h3>
+        <p>Step directly onto the sand from your spacious suite.</p>
+        <button class="btn">View Details</button>
       </div>
-    </section>
-  
-    <footer>
-      <p>&copy; 2025 Shangri La Beach Resort. All rights reserved.</p>
-    </footer>
-  
-    <script src="script.js"></script>
-  </body>
-  
+      <div class="room-card">
+        <img src="images/hotelview3.png" alt="Garden View Family Room" />
+        <h3>Garden View Family Room</h3>
+        <p>Perfect for families, with ample space and garden views.</p>
+        <button class="btn">View Details</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shangri La Beach Resort. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
