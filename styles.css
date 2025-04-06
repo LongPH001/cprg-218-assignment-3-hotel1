@@ -73,16 +73,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-
-.btn {
-  padding: 0.7rem 1.5rem;
-  border: none;
-  background-color: #c89f63;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 /* Section layout */
 .intro, .promo, .rooms {
   max-width: 1100px;
@@ -104,13 +94,24 @@ body {
   background: white;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .room-card img {
   width: 100%;
   border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.room-card:hover img {
+  transform: scale(1.05);
+
 }
 
 .features {
@@ -144,44 +145,6 @@ body {
   color: #222;
 }
 
-.testimonials {
-  background-color: #f0eee8;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.testimonial {
-  margin: 1rem auto;
-  max-width: 700px;
-  font-style: italic;
-  color: #555;
-}
-
-.testimonial span {
-  display: block;
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: #222;
-}
-.main-nav {
-  position: sticky; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-}
-
 .main-nav .logo {
   color: white;
   font-size: 1.3rem;
@@ -189,7 +152,9 @@ body {
   font-family: 'Georgia', serif;
 }
 .nav-links {
+  flex: 1;
   display: flex;
+  justify-content: center;  /* ✅ center the nav links */
   gap: 3.5rem;
   align-items: center;
 }
@@ -211,8 +176,45 @@ body {
 }
 .nav-right {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
+
+.handwriting {
+  max-width: 500px;
+  margin: 1rem auto 0.5rem;
+  display: block;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 4s ease-out forwards;
+}
+
+
+.handwriting text {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 4s ease-out forwards;
+}
+
+/* Pen stroke animation */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* === RESPONSIVE NAVBAR === */
 @media screen and (max-width: 768px) {
   .main-nav {
@@ -568,10 +570,104 @@ body {
   }
 }
 
+.weather-icon-only {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  height: 32px; 
+}
+
+.amenities-info {
+  padding: 4rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.amenities-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.amenity-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.amenity-item .icon {
+  width: 26px;
+  height: 26px;
+  fill: #c89f63;
+  flex-shrink: 0;
+}
+
+.testimonials {
+  background-color: #f0eee8;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+  color: #555;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #c89f63;
+}
+.stars {
+  color: #c89f63; /* Theme gold */
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
 /* Footer */
 footer {
-  background: #222;
-  color: white;
+  background: #e3c490;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 1.5rem;
   margin-top: 4rem;

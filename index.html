@@ -6,6 +6,7 @@
   <title>Shangri La Beach Resort</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="hero">
@@ -17,47 +18,60 @@
       <div class="logo">
         <img src="images/shangrila.png" alt="Shangri-La Logo" />
       </div>
-    
+
       <nav class="nav-links" id="navLinks">
         <a href="#">Home</a>
         <a href="#rooms">Accommodations</a>
         <a href="#amenities">Amenities</a>
         <a href="#contact">Contact</a>
+        <a href="#contact">News</a>
       </nav>
-    
+
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      
+
       <div class="nav-right">
-        <button class="btn sign-in">Sign in or Join</button>
-        <button class="btn reserve">Reserve Now</button>
-      </div>
-    </div>
-    
-    
+        <div class="weather-icon-only" id="weather">
+          <img src="" alt="Weather Icon" class="icon" />
+          <span class="temp">--°</span>
+        </div>
+        <button class="btn sign-in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="signin-icon" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-7a3 3 0 1 0-0.001-6.001A3 3 0 0 0 8 7z"/>
+          </svg>
+          Sign in or Join
+        </button>
+              </div>
+                </div>
 
     <div class="hero-content">
       <h1>Your Dream Getaway</h1>
-      <p>Indulge in luxury and breathtaking views at Shangri La Beach Resort.</p>
+      <svg class="handwriting" viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg">
+      <text x="50%" y="60" text-anchor="middle" fill="none" stroke="#f5d7a5"
+      stroke-width="1.5" stroke-linecap="round"
+      font-size="70" font-family="'Great Vibes', cursive"
+      style="letter-spacing: 2px;">
+  Escape to Paradise
+      </text>
+    </svg>
 
-      <!-- 🔍 Inline search bar -->
-      <div class="inside-hero">
-        <div class="search-field">
-          <label>Destination</label>
-          <input type="text" placeholder="Where to?" />
-        </div>
-        <div class="search-field">
-          <label>Check-in</label>
-          <input type="date" id="inline-checkin" />
-        </div>
-        <div class="search-field">
-          <label>Check-out</label>
-          <input type="date" id="inline-checkout" />
-        </div>
-        <button class="search-btn" onclick="toggleModal()">Hotel Search</button>
+    <div class="inside-hero">
+      <div class="search-field">
+        <label>Destination</label>
+        <input type="text" placeholder="Where to?" />
+      </div>
+      <div class="search-field">
+        <label>Check-in</label>
+        <input type="date" id="inline-checkin" />
+      </div>
+      <div class="search-field">
+        <label>Check-out</label>
+        <input type="date" id="inline-checkout" />
+      </div>
+      <button class="search-btn" onclick="toggleModal()">Reserve Now</button>
       </div>
     </div>
   </header>
@@ -126,6 +140,64 @@
     </div>
   </section>
 
+  <section id="amenities" class="amenities-info">
+    <div class="amenities-container">
+      <h2>Featured Amenities On-Site</h2>
+      <div class="amenity-list">
+        
+        <div class="amenity-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 21h14v-2H5v2zM12 2C9.79 2 8 3.79 8 6v5H6l2 4h8l2-4h-2V6c0-2.21-1.79-4-4-4z"/></svg>
+          <span>Spa & Wellness</span>
+        </div>
+  
+        <div class="amenity-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 17h18v2H3v-2zm0-4h18v2H3v-2zm0-4h18v2H3V9zm0-4h18v2H3V5z"/></svg>
+          <span>Infinity Pool</span>
+        </div>
+  
+        <div class="amenity-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a6 6 0 016 6c0 2.21-1.2 4.15-3 5.19V18h4v2H5v-2h4v-4.81A5.985 5.985 0 016 8a6 6 0 016-6z"/></svg>
+          <span>Pet-Friendly</span>
+        </div>
+  
+        <div class="amenity-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 7H3V5h18v2zM3 9h18v2H3V9zm0 4h18v2H3v-2zm0 4h18v2H3v-2z"/></svg>
+          <span>Fine Dining</span>
+        </div>
+  
+        <div class="amenity-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 4a8 8 0 00-8 8v6H2v2h20v-2h-2v-6a8 8 0 00-8-8z"/></svg>
+          <span>Fitness Center</span>
+        </div>
+  
+        <div class="amenity-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5zm4 2v10h10V7H7z"/></svg>
+          <span>High-Speed WiFi</span>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section class="testimonials" id="reviews">
+    <h2>What Our Guests Are Saying</h2>
+    <div class="testimonial-container">
+  
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Our stay at Shangri La was absolutely perfect! The service was impeccable, and the views were breathtaking."</p>
+        <span>- Sarah M.</span>
+      </div>
+  
+      <div class="testimonial-card">
+        <div class="stars">★★★★☆</div>
+        <p>"The beachfront suite was amazing! Waking up to the sound of the waves and stepping right onto the sand was incredible."</p>
+        <span>- John B.</span>
+      </div>
+  
+    </div>
+  </section>
+  
   <footer>
     <p>&copy; 2025 Shangri La Beach Resort. All rights reserved.</p>
   </footer>
