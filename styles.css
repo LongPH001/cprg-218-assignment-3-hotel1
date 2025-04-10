@@ -38,7 +38,6 @@ body {
   z-index: 1;
 }
 
-/* Keep nav separate and on top */
 .main-nav {
   position: absolute;
   top: 0;
@@ -52,8 +51,12 @@ body {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
 }
+/* Solid navbar for non-home pages */
+body.not-home .main-nav {
+  background-color: #2c2c2c; /* Choose any theme-friendly solid color */
+  backdrop-filter: none;
+}
 
-/* Center hero content */
 .hero-content {
   position: absolute;
   top: 50%;
@@ -663,6 +666,97 @@ body {
   margin-bottom: 1rem;
   letter-spacing: 2px;
 }
+
+/* Grid container */
+.room-grid.list-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card style */
+.room-list-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-list-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Text info */
+.room-info {
+  padding: 1.2rem;
+  text-align: left;
+}
+
+.room-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+
+.subtext {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Action row */
+.room-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.text-link:hover {
+  color: #c89f63;
+}
+
+.room-list-card .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.room-list-card .btn:hover {
+  background-color: #c89f63;
+  color: #000;
+}
+
+.room-desc {
+  display: none;
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.room-desc.open {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
 
 /* Footer */
 footer {

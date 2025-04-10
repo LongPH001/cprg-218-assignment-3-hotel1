@@ -42,31 +42,27 @@ function setDefaultDates(id1, id2) {
     document.getElementById("hamburger").classList.toggle("active");
   }
 
-// Weather icon + temp only
-const iconEl = document.querySelector("#weather .icon");
-const tempEl = document.querySelector("#weather .temp");
-
-function fetchWeather() {
-  const lat = 21.1619; // Cancún, Mexico latitude
-  const lon = -86.8515; // Cancún, Mexico longitude
-  const apiKey = "ededa9facc7a53afe6a409daa8f1c952";
-
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const temp = Math.round(data.main.temp);
-      const icon = data.weather[0].icon;
-      const description = data.weather[0].description;
-
-      iconEl.src = `https://openweathermap.org/img/wn/${icon}.png`;
-      iconEl.alt = description;
-      tempEl.textContent = `${temp}°`;
-    })
-    .catch(error => {
-      console.error("Error fetching weather data:", error);
-    });
-}
-
-fetchWeather();
+  const iconEl = document.querySelector("#weather .icon");
+  const tempEl = document.querySelector("#weather .temp");
+  
+  async function fetchWeather() {
+    // Cancún coordinates
+    const lat = 21.1619;
+    const lon = -86.8515;
+    const apiKey = "ededa9facc7a53afe6a409daa8f1c952";
+  
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+    );
+  
+    const data = await response.json();
+    const temp = Math.round(data.main.temp);
+    const icon = data.weather[0].icon;
+  
+    iconEl.src = `https://openweathermap.org/img/wn/${icon}.png`;
+    iconEl.alt = data.weather[0].description;
+    tempEl.textContent = `${temp}°`;
+  }
+  
+  fetchWeather();
+  

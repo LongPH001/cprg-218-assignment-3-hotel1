@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shangri La Beach Resort</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body class="not-home">
+
+  <!-- 🌴 Navigation Bar -->
+  <header class="main-nav">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/shangrila.png" alt="Shangri-La Logo" />
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="accommodations.html" class="active">Accommodations</a>
+      <a href="amenities.html">Amenities</a>
+      <a href="contact.html">Contact</a>
+      <a href="news.html">News</a>
+    </nav>
+
+    <button class="btn sign-in">Sign in or Join</button>
+  </header>
+
+  <!-- 💺 Room Cards -->
+  <section class="rooms">
+    <h1>Our Accommodations</h1>
+    <p>Choose from a range of luxurious rooms and suites designed for comfort and relaxation.</p>
+
+    <div class="room-grid list-view">
+
+        <!-- Room 1 -->
+        <div class="room-list-card">
+            <img src="images/hotelview1.png" alt="Ocean View Deluxe Room" />
+            <div class="room-info">
+              <h3>Ocean View Deluxe Room</h3>
+              <p class="subtext">Guest room · 1 King · Ocean view</p>
+          
+              <!-- 🟢 Keep this inside .room-info -->
+              <div class="room-desc">
+                Wake up to breathtaking ocean views with a luxurious king-sized bed and private balcony.
+              </div>
+          
+              <div class="room-actions">
+                <a href="#" class="text-link toggle-desc">View More</a>
+                <button class="btn">View Rates</button>
+              </div>
+            </div>
+          </div>
+          
+        <!-- Room 2 -->
+        <div class="room-list-card">
+          <img src="images/hotelview2.png" alt="Beachfront Suite" />
+          <div class="room-info">
+            <h3>Beachfront Suite</h3>
+            <p class="subtext">Guest room · 1 King · Beachfront</p>
+      
+            <div class="room-desc">
+              Step directly onto the sand from your suite, featuring a private terrace and ocean breeze.
+            </div>
+      
+            <div class="room-actions">
+              <a href="#" class="text-link toggle-desc">View More</a>
+              <button class="btn">View Rates</button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Room 3 -->
+        <div class="room-list-card">
+          <img src="images/hotelview3.png" alt="Garden View Family Room" />
+          <div class="room-info">
+            <h3>Garden View Family Room</h3>
+            <p class="subtext">Guest room · 2 Queen · Garden view</p>
+      
+            <div class="room-desc">
+              Spacious and cozy, this family-friendly room is surrounded by lush tropical gardens.
+            </div>
+      
+            <div class="room-actions">
+              <a href="#" class="text-link toggle-desc">View More</a>
+              <button class="btn">View Rates</button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Room 4 -->
+        <div class="room-list-card">
+          <img src="images/hotelview4.png" alt="Presidential Oceanfront Suite" />
+          <div class="room-info">
+            <h3>Presidential Oceanfront Suite</h3>
+            <p class="subtext">Suite · 1 King · Panoramic Ocean View</p>
+      
+            <div class="room-desc">
+              Indulge in ultimate luxury with a spacious living area, private hot tub, and oceanfront views.
+            </div>
+      
+            <div class="room-actions">
+              <a href="#" class="text-link toggle-desc">View More</a>
+              <button class="btn">View Rates</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="accomodations.js"></script>
+    </body>
+</html>
