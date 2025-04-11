@@ -66,3 +66,35 @@ function setDefaultDates(id1, id2) {
   
   fetchWeather();
   
+  // Flatpickr Calendar Init
+flatpickr("#checkin", {
+  dateFormat: "Y-m-d",
+  minDate: "today"
+});
+
+flatpickr("#checkout", {
+  dateFormat: "Y-m-d",
+  minDate: new Date().fp_incr(1)
+});
+
+// Room Image Preview
+function updateRoomImage() {
+  const select = document.getElementById("room");
+  const preview = document.getElementById("room-img");
+
+  const images = {
+    ocean: "images/hotelview1.png",
+    beach: "images/hotelview2.png",
+    garden: "images/hotelview3.png"
+  };
+
+  const roomType = select.value;
+  if (images[roomType]) {
+    preview.src = images[roomType];
+    preview.alt = select.options[select.selectedIndex].text;
+    preview.style.display = "block";
+  } else {
+    preview.style.display = "none";
+  }
+}
+

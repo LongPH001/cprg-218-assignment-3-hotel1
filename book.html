@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Stay | Shangri-La Beach Resort</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body class="not-home">
+
+  <!-- 🌴 Navigation Bar -->
+  <header class="main-nav">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/shangrila.png" alt="Shangri-La Logo" />
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="accommodations.html">Accommodations</a>
+      <a href="amenities.html">Amenities</a>
+      <a href="contact.html">Contact</a>
+      <a href="news.html">News</a>
+    </nav>
+
+    <button class="btn sign-in">Sign in or Join</button>
+  </header>
+
+  <!-- 🏨 Booking Section -->
+  <section id="booking" class="booking-page">
+    <h2>Book Your Stay</h2>
+    <p>Secure your luxurious getaway today.</p>
+
+    <form class="booking-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@email.com" required />
+
+      <label for="checkin">Check-In Date</label>
+      <input type="text" id="checkin" placeholder="Select a date" required />
+
+      <label for="checkout">Check-Out Date</label>
+      <input type="text" id="checkout" placeholder="Select a date" required />
+
+      <label for="guests">Guests</label>
+      <select id="guests" required>
+        <option value="" disabled selected>Select number of guests</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4+</option>
+      </select>
+
+      <label for="room">Room Type</label>
+      <select id="room" onchange="updateRoomImage()" required>
+        <option value="" disabled selected>Select a room</option>
+        <option value="ocean">Ocean View Deluxe Room</option>
+        <option value="beach">Beachfront Suite</option>
+        <option value="garden">Garden View Family Room</option>
+      </select>
+
+      <!-- Preview Image -->
+      <div id="room-preview">
+        <img id="room-img" src="" alt="" style="display: none;" />
+      </div>
+
+      <label for="requests">Special Requests</label>
+      <textarea id="requests" rows="4" placeholder="Let us know anything else..."></textarea>
+
+      <button type="submit" class="btn">Confirm Booking</button>
+    </form>
+  </section>
+
+  <!-- 🔻 Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Shangri-La Beach Resort. All rights reserved.</p>
+  </footer>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="booking.js"></script>
+</body>
+</html>
