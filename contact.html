@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shangri La Beach Resort</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body class="not-home">
+
+    <!-- 🌴 Navigation Bar -->
+    <header class="main-nav">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/shangrila.png" alt="Shangri-La Logo" />
+        </a>
+      </div>
+  
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="accommodations.html">Accommodations</a>
+        <a href="amenities.html">Amenities</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="news.html">News</a>
+      </nav>
+  
+      <button class="btn sign-in">Sign in or Join</button>
+    </header>
+  
+    <!-- 📬 Contact Section -->
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Have questions? Reach out to us — we’re here to help.</p>
+  
+      <div class="contact-container">
+        <form class="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" required />
+  
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your email" required />
+  
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your message..." rows="5" required></textarea>
+  
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+  
+        <div class="contact-info">
+          <h3>Visit Us</h3>
+          <p>Shangri-La Beach Resort</p>
+          <p>123 Ocean Breeze Blvd, Paradise Cove</p>
+          <p>Email: info@shangrilabeachresort.com</p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+      </div>
+  
+        <!-- 🗺️ Google Map Embed - Resort Area in Cancún -->
+    <div class="map-embed">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.252804682554!2d-86.7711456252792!3d21.123475786112454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2c13253a2ea3%3A0x83dd30be8e2b41b0!2sPlaya%20Marlin!5e0!3m2!1sen!2sca!4v1712796528125!5m2!1sen!2sca" 
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+  
+  
+    </section>
+  
+    <!-- 💬 Live Chat Button -->
+    <div class="chat-btn" onclick="alert('Chat support coming soon!')">
+      💬 Chat with us
+    </div>
+  
+    <!-- 🔻 Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Shangri-La Beach Resort. All rights reserved.</p>
+    </footer>
+  
+  </body>
+  </html>
