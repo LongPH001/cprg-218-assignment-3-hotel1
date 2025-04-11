@@ -9,6 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+  <body>
+<!-- ✍️ Text Preloader -->
+  <div id="preloader">
+    <div class="typing-loader" style="max-width: 320px; text-align: center;">
+      <span id="typing-text">Shangri-la Welcomes You</span>
+    </div>
+  </div>
+<!-- 🌊 Website Content -->
+<div id="site-content">
   <header class="hero">
     <video autoplay muted loop playsinline class="hero-video">
       <source src="resort-video.mp4" type="video/mp4" />
@@ -44,8 +53,8 @@
           </svg>
           Sign in or Join
         </button>
-              </div>
-                </div>
+      </div>
+    </div>
 
     <div class="hero-content">
       <h1>Your Dream Getaway</h1>
@@ -140,10 +149,8 @@
       <p>Perfect for families, with ample space and garden views.</p>
       <a href="book.html" class="btn">Book Now</a>
     </div>
-
   </div>
 </section>
-
 
 <section id="amenities" class="amenities-info">
   <div class="amenities-container">
@@ -202,6 +209,10 @@
   </div>
 </section>
 
+<section class="full-width-image">
+  <img src="images/istockphoto-1410942695-612x612.jpg" alt="Scenic view of resort" />
+</section>
+
   
   <section class="testimonials" id="reviews">
     <h2>What Our Guests Are Saying</h2>
@@ -222,10 +233,34 @@
     </div>
   </section>
   
-  <footer>
-    <p>&copy; 2025 Shangri La Beach Resort. All rights reserved.</p>
+  <footer class="main-footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Shangri-La Beach Resort. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="accommodations.html">Accommodations</a>
+        <a href="amenities.html">Amenities</a>
+        <a href="contact.html">Contact</a>
+        <a href="news.html">News</a>
+      </div>
+    </div>
   </footer>
+</div>
+   
+<script src="script.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      const siteContent = document.getElementById('site-content');
 
-  <script src="script.js"></script>
-</body>
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          siteContent.classList.add('show');
+        }, 500);
+      }, 1000);
+    });
+  </script>
+  </body>
 </html>
