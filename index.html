@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
-  <body>
+  <body class="home">
 <!-- ✍️ Text Preloader -->
   <div id="preloader">
     <div class="typing-loader" style="max-width: 320px; text-align: center;">
@@ -124,6 +124,26 @@
     </div>
   </div>
 
+  <!-- 🍽 Dining Experience Section -->
+  <a href="dining.html" class="dining-banner">
+   <img src="images/dining-banner.png" alt="Fine Dining at Shangri-La" class="dining-image">
+   <div class="dining-text">
+     <h2>Exquisite Dining</h2>
+     <p>Savor world-class cuisine at Shangri-La’s SeaBreeze Restaurant — where local flavors meet oceanfront elegance.</p>
+     <span class="view-menu-btn">Explore Dining →</span>
+   </div>
+  </a>
+
+<!-- 🎉 Event Highlight Banner -->
+<a href="event.html" class="dining-banner">
+  <img src="images/events.png" alt="Shangri-La Events" class="dining-image">
+  <div class="dining-text">
+    <h2>Unforgettable Events Await</h2>
+    <p>From beachfront parties to romantic celebrations, experience the magic of Shangri-La gatherings.</p>
+    <span class="view-menu-btn">Explore Events</span>
+  </div>
+</a>
+
   <!-- 🛏️ Rooms -->
 <section id="rooms" class="rooms">
   <h2>Our Luxurious Accommodations</h2>
@@ -210,29 +230,59 @@
 </section>
 
 <section class="full-width-image">
-  <img src="images/istockphoto-1410942695-612x612.jpg" alt="Scenic view of resort" />
+  <img src="images/resort-image.png" alt="Scenic view of resort" />
 </section>
 
   
-  <section class="testimonials" id="reviews">
-    <h2>What Our Guests Are Saying</h2>
-    <div class="testimonial-container">
-  
-      <div class="testimonial-card">
+<section class="testimonials-slider" id="reviews">
+  <h2>What Our Guests Are Saying</h2>
+  <p class="testimonial-intro">
+    Read about the wonderful experiences our guests have had at Shangri La Beach Resort.
+  </p>
+
+  <div class="slider-container">
+    <div class="slider-track">
+
+      <div class="testimonial-slide">
         <div class="stars">★★★★★</div>
-        <p>"Our stay at Shangri La was absolutely perfect! The service was impeccable, and the views were breathtaking."</p>
+        <p>"Our stay at Shangri La was absolutely perfect! The service was impeccable, the food was delicious, and the views were breathtaking. We especially loved relaxing by the infinity pool. We can't wait to return!"</p>
         <span>- Sarah M.</span>
       </div>
-  
-      <div class="testimonial-card">
+
+      <div class="testimonial-slide">
         <div class="stars">★★★★☆</div>
-        <p>"The beachfront suite was amazing! Waking up to the sound of the waves and stepping right onto the sand was incredible."</p>
+        <p>"The beachfront suite was amazing! Waking up to the sound of the waves and stepping right onto the sand was incredible. The resort offered so many activities, we never had a dull moment. Highly recommend the snorkeling!"</p>
         <span>- John B.</span>
       </div>
-  
+
+      <div class="testimonial-slide">
+        <div class="stars">★★★★★</div>
+        <p>"We traveled with our two young children, and the Kids' Club was a lifesaver! The staff were fantastic, and our kids had a blast. This allowed us some much-needed relaxation time. The resort is very family-friendly."</p>
+        <span>- Emily K.</span>
+      </div>
+
+      <div class="testimonial-slide">
+        <div class="stars">★★★★★</div>
+        <p>"The spa experience was divine. The therapists were skilled, and the atmosphere was so peaceful. It was the perfect way to unwind and de-stress. We left feeling completely rejuvenated."</p>
+        <span>- David L.</span>
+      </div>
+
+      <div class="testimonial-slide">
+        <div class="stars">★★★★☆</div>
+        <p>"From the moment we arrived, the staff made us feel welcome and well taken care of. The attention to detail was outstanding. Shangri La truly lives up to its name - a little slice of paradise!"</p>
+        <span>- Jessica P.</span>
+      </div>
+
     </div>
-  </section>
-  
+    <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+    <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+  </div>
+
+  <div class="testimonial-footer">
+    <p>We are always striving to provide exceptional experiences for our guests. If you have enjoyed your stay at Shangri La Beach Resort, we would love to hear from you!</p>
+  </div>
+</section>
+
   <footer class="main-footer">
     <div class="footer-container">
       <p>&copy; 2025 Shangri-La Beach Resort. All rights reserved.</p>
@@ -262,5 +312,28 @@
       }, 1000);
     });
   </script>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const sliderTrack = document.querySelector('.slider-track');
+
+  function moveSlide(step) {
+    currentSlide += step;
+
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    } else if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+
+    const offset = -currentSlide * 100;
+    sliderTrack.style.transform = `translateX(${offset}%)`;
+  }
+
+  // Optional: Auto-slide every 8 seconds
+  setInterval(() => moveSlide(1), 8000);
+</script>
+
   </body>
 </html>
